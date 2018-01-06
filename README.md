@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This sample script starts a Telegram bot which saves user input into a SQLite3 database as the user interacts with the bot.
+This sample script starts a [Telegram bot](https://core.telegram.org/bots) which saves user input into a [SQLite3](https://www.sqlite.org/) database as the user interacts with the bot.
 
 The script was adapted from the example [conversationbot2](https://github.com/python-telegram-bot/python-telegram-bot/blob/master/examples/conversationbot2.py) from [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot).
 
@@ -14,7 +14,7 @@ This script was written for Python 3 (preferably 3.3 and above).
 
 The script requires the following libraries (and dependencies therein).
 
-### [python-telegram-bot] (https://github.com/python-telegram-bot/python-telegram-bot)
+### python-telegram-bot
 
 A library for the [Telegram Bot API] (https://core.telegram.org/bots/api).
 
@@ -25,7 +25,7 @@ $ pip install python-telegram-bot --upgrade
 
 For more information please refer to [PyPI](https://pypi.python.org/pypi/python-telegram-bot) or [Github](https://github.com/python-telegram-bot/python-telegram-bot). 
 
-### [SQLite3] (https://docs.python.org/3.5/library/sqlite3.html)
+### SQLite3
 
 SQLite3 should be included in the standard library.
 
