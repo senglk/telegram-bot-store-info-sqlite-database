@@ -16,7 +16,7 @@ The script requires the following libraries (and dependencies therein).
 
 ### python-telegram-bot
 
-A library for the [Telegram Bot API] (https://core.telegram.org/bots/api).
+A library for the [Telegram Bot API](https://core.telegram.org/bots/api).
 
 You can install or upgrade the python-telegram-bot library with:
 ````
@@ -58,4 +58,4 @@ You can terminate the bot by pressing `Ctrl+C`.
 
 ## Browsing the SQLite3 Database
 
-You may browse the SQLite3 file using [DB Browser ofr SQLite](http://sqlitebrowser.org/).
+You may browse the SQLite3 file using [DB Browser for SQLite](http://sqlitebrowser.org/).
