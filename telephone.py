@@ -17,7 +17,6 @@ bot.
 KNOWN ISSUE: '' user inputs appear as None. Unable to satisfactorily apply conditionals.
 """
 
-
 #### SQLITE BRANCH ####
 import sys
 import sqlite3
@@ -40,6 +39,9 @@ def loadDB():
     conn.close()
 
 def checkUser(update, user_data):
+    # Checks if user has visited the bot before
+    # If yes, load data of user
+    # If no, then create a new entry in database
     conn = sqlite3.connect('content.sqlite')
     cur = conn.cursor()
     conn.text_factory = str
@@ -62,6 +64,7 @@ def checkUser(update, user_data):
     conn.close()
 
 def updateUser(category, text, update):
+    # Updates user info as inputted.
     conn = sqlite3.connect('content.sqlite')
     cur = conn.cursor()
     conn.text_factory = str
@@ -104,12 +107,11 @@ def facts_to_str(user_data):
 
 def start(bot, update, user_data):
     update.message.reply_text(
-        "I am Mr MeeSeeks look at me!. "
+        "I am Mr Meeseeks look at me!. "
         "Why don't you tell me something about yourself?",
         reply_markup=markup)
     checkUser(update, user_data)
     return CHOOSING
-
 
 def regular_choice(bot, update, user_data):
     text = update.message.text
@@ -129,9 +131,7 @@ def received_information(bot, update, user_data):
                               "{}"
                               "You can tell me more, or change your opinion on something.".format(
                                   facts_to_str(user_data)), reply_markup=markup)
-    ##print(update.message.from_user.first_name)
     return CHOOSING
-
 
 def done(bot, update, user_data):
     if 'choice' in user_data:
@@ -144,11 +144,9 @@ def done(bot, update, user_data):
     user_data.clear()
     return ConversationHandler.END
 
-
 def error(bot, update, error):
     """Log Errors caused by Updates."""
     logger.warning('Update "%s" caused error "%s"', update, error)
-
 
 def main():
     # Create the Updater and pass it your bot's token.
